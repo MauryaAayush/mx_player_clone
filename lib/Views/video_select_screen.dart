@@ -32,44 +32,46 @@ class VideoSelectionScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView.builder(
-        itemCount: videos.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                SizedBox(
-                  width: 100,
-                  height: 56,
-                  child: CachedNetworkImage(
-                    imageUrl: videos[index]['thumbnail']!,
-                    placeholder: (context, url) => CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => Icon(Icons.video_call,color: Colors.white),
-                    fit: BoxFit.cover,
+      body: SafeArea(
+        child: ListView.builder(
+          itemCount: videos.length,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 100,
+                    height: 56,
+                    child: CachedNetworkImage(
+                      imageUrl: videos[index]['thumbnail']!,
+                      placeholder: (context, url) => CircularProgressIndicator(),
+                      errorWidget: (context, url, error) => Icon(Icons.video_call,color: Colors.white),
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: ListTile(
-                    trailing: Icon(Icons.more_vert),
-                    title: Text(videos[index]['title']!,style: TextStyle(
-                      color: Colors.white
-                    ),),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => VideoPlayerScreen(videoUrl: videos[index]['url']!),
-                        ),
-                      );
-                    },
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: ListTile(
+                      trailing: Icon(Icons.more_vert,color: Colors.white,),
+                      title: Text(videos[index]['title']!,style: TextStyle(
+                        color: Colors.white
+                      ),),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => VideoPlayerScreen(videoUrl: videos[index]['url']!),
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                ),
-              ],
-            ),
-          );
-        },
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }
