@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Components/Folder -- Icon.dart';
+
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
 
@@ -59,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
+                  children: [
                     _buildFolderIcon(Icons.share, 'Share'),
                     _buildFolderIcon(Icons.music_note, 'Music'),
                     _buildFolderIcon(Icons.camera_alt, 'Downloader'),
@@ -73,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               child: ListView(
                 children: <Widget>[
-                  _buildFolderItem('1692881982577.mp4', '1 video'),
+                  _buildFolderItem('Cartoons', '20 video'),
                   _buildFolderItem('Camera', '4 videos'),
                   _buildFolderItem('In-Store Downloader', '33 videos'),
                   _buildFolderItem('Instant Downloader', '1 video'),
@@ -126,27 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget _buildFolderIcon(IconData icon, String text) {
-    return Column(
-      children: <Widget>[
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 10),
-            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 25),
-            decoration: BoxDecoration(
-                color: Colors.grey.shade800.withOpacity(0.3),
-              borderRadius: BorderRadius.circular(30)
-            ),
 
-            child: Icon(icon,color: Colors.white70,size: 18,)),
-        Padding(
-          padding: const EdgeInsets.only(top: 8.0),
-          child: Text(text,style: TextStyle(
-            color: Colors.white70
-          ),),
-        ),
-      ],
-    );
-  }
 
   Widget _buildFolderItem(String title, String subtitle, {int? number}) {
     return ListTile(
@@ -159,4 +141,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
     );
   }
+}
+
+
+Widget _buildFolderIcon(IconData icon, String text) {
+  return Column(
+    children: <Widget>[
+      Container(
+          margin: EdgeInsets.symmetric(horizontal: 10),
+          padding: EdgeInsets.symmetric(vertical: 10,horizontal: 25),
+          decoration: BoxDecoration(
+              color: Colors.grey.shade800.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(30)
+          ),
+
+          child: Icon(icon,color: Colors.white70,size: 18,)),
+      Padding(
+        padding: const EdgeInsets.only(top: 8.0),
+        child: Text(text,style: TextStyle(
+            color: Colors.white70
+        ),),
+      ),
+    ],
+  );
 }
