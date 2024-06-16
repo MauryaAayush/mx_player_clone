@@ -15,6 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF16202A),
       appBar: AppBar(
         title: Text(
           "Folders",
@@ -93,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         items: [
           BottomNavigationBarItem(
+            backgroundColor:Color(0xFF1C2939),
             icon: Icon(Icons.folder),
             label: 'Local',
           ),
@@ -107,11 +109,12 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.play_circle),
             label: 'MX Gold',
+
           ),
         ],
-        selectedItemColor: Colors.red,
+        selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.red,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
