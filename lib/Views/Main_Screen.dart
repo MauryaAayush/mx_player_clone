@@ -16,8 +16,23 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-        leading: Icon(Icons.arrow_back_ios),
+        title: Text(
+          "Folders",
+          style: TextStyle(color: Colors.white),
+        ),
+        actionsIconTheme: IconThemeData(color: Colors.white),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFF1D354F),
+                Color(0xFF16202A),
+              ],
+            ),
+          ),
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
@@ -122,11 +137,13 @@ class _MyHomePageState extends State<MyHomePage> {
       leading: Icon(Icons.folder),
       title: Text(title),
       subtitle: Text(subtitle),
-      trailing: number != null ? CircleAvatar(
-        radius: 12,
-        backgroundColor: Colors.red,
-        child: Text(number.toString()),
-      ) : null,
+      trailing: number != null
+          ? CircleAvatar(
+              radius: 12,
+              backgroundColor: Colors.red,
+              child: Text(number.toString()),
+            )
+          : null,
     );
   }
 }
