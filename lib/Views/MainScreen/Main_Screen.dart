@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import '../InStore_select_Screen.dart';
 import '../video_select_screen.dart';
-
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -77,11 +77,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: <Widget>[
                   InkWell(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const VideoSelectionScreen(),));
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const VideoSelectionScreen(),
+                        ));
                       },
                       child: _buildFolderItem('Cartoons', '20 video')),
-                  _buildFolderItem('Camera', '4 videos'),
-                  _buildFolderItem('In-Store Downloader', '33 videos'),
+                  InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const InstoreSelectScreen(),));
+                      },
+                      child: _buildFolderItem('Camera', '21 videos')),
+                  _buildFolderItem('In-Store Downloader', '21 videos'),
                   _buildFolderItem('Instant Downloader', '1 video'),
                   _buildFolderItem('Internal memory', '2 videos'),
                   _buildFolderItem('Screen Record', '7 videos', number: 1),
@@ -101,11 +107,9 @@ class _MyHomePageState extends State<MyHomePage> {
             _currentIndex = index;
           });
         },
-
-
         items: [
           BottomNavigationBarItem(
-            backgroundColor:Color(0xFF1C2939),
+            backgroundColor: Color(0xFF1C2939),
             icon: Icon(Icons.folder),
             label: 'Local',
           ),
@@ -125,49 +129,54 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
       ),
-
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
         shape: const CircleBorder(),
         onPressed: () {},
-        child: Icon(Icons.play_arrow,color: Colors.white,size: 40,),
+        child: Icon(
+          Icons.play_arrow,
+          color: Colors.white,
+          size: 40,
+        ),
       ),
     );
   }
 
-
-
   Widget _buildFolderItem(String title, String subtitle, {int? number}) {
     return ListTile(
-      leading: Icon(Icons.folder,size: 85,),
-
-      title: Text(title,style: TextStyle(
-        color: Colors.white70
-      ),),
+      leading: Icon(
+        Icons.folder,
+        size: 85,
+      ),
+      title: Text(
+        title,
+        style: TextStyle(color: Colors.white70),
+      ),
       subtitle: Text(subtitle),
-
     );
   }
 }
-
 
 Widget _buildFolderIcon(IconData icon, String text) {
   return Column(
     children: <Widget>[
       Container(
           margin: EdgeInsets.symmetric(horizontal: 10),
-          padding: EdgeInsets.symmetric(vertical: 10,horizontal: 25),
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
           decoration: BoxDecoration(
               color: Colors.grey.shade800.withOpacity(0.3),
-              borderRadius: BorderRadius.circular(30)
-          ),
-
-          child: Icon(icon,color: Colors.white70,size: 18,)),
+              borderRadius: BorderRadius.circular(30)),
+          child: Icon(
+            icon,
+            color: Colors.white70,
+            size: 18,
+          )),
       Padding(
         padding: const EdgeInsets.only(top: 8.0),
-        child: Text(text,style: TextStyle(
-            color: Colors.white70
-        ),),
+        child: Text(
+          text,
+          style: TextStyle(color: Colors.white70),
+        ),
       ),
     ],
   );

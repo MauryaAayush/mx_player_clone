@@ -1,4 +1,5 @@
-const List<Map<String, String>> videos = [
+
+List<Map<String, String>> videos = [
   {
     'title': 'Big Buck Bunny',
     'url': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',

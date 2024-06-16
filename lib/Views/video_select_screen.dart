@@ -27,7 +27,7 @@ class VideoSelectionScreen extends StatelessWidget {
         ],
         elevation: 10,
         centerTitle: true,
-        title: const Text('Cartoon',style: TextStyle(
+        title: const Text('Cartoons',style: TextStyle(
           color: Colors.white
         ),),
 
@@ -44,7 +44,7 @@ class VideoSelectionScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: SafeArea(
+      body: SafeArea  (
         child: ListView.builder(
           itemCount: videos.length,
           itemBuilder: (context, index) {
@@ -54,7 +54,7 @@ class VideoSelectionScreen extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: 100,
-                    height: 56,
+                    height: 60,
                     child: CachedNetworkImage(
                       imageUrl: videos[index]['thumbnail']!,
                       placeholder: (context, url) => CircularProgressIndicator(),
