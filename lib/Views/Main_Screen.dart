@@ -55,16 +55,19 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  _buildFolderIcon(Icons.share, 'Share'),
-                  _buildFolderIcon(Icons.music_note, 'Music'),
-                  _buildFolderIcon(Icons.camera_alt, 'Downloader'),
-                  _buildFolderIcon(Icons.lock, 'Privacy'),
-                  _buildFolderIcon(Icons.playlist_add, 'Playlist'),
-                  _buildFolderIcon(Icons.cloud_upload, 'M-Cloud'),
-                ],
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    _buildFolderIcon(Icons.share, 'Share'),
+                    _buildFolderIcon(Icons.music_note, 'Music'),
+                    _buildFolderIcon(Icons.camera_alt, 'Downloader'),
+                    _buildFolderIcon(Icons.lock, 'Privacy'),
+                    _buildFolderIcon(Icons.playlist_add, 'Playlist'),
+                    _buildFolderIcon(Icons.cloud_upload, 'M-Cloud'),
+                  ],
+                ),
               ),
             ),
             Expanded(
@@ -109,16 +112,16 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.play_circle),
             label: 'MX Gold',
-
           ),
         ],
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
-        backgroundColor: Colors.red,
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+        shape: const CircleBorder(),
         onPressed: () {},
-        child: Icon(Icons.play_circle),
+        child: Icon(Icons.play_arrow,color: Colors.white,size: 40,),
       ),
     );
   }
@@ -126,10 +129,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _buildFolderIcon(IconData icon, String text) {
     return Column(
       children: <Widget>[
-        Icon(icon),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 10),
+            height: 50,
+            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 25),
+            decoration: BoxDecoration(
+                color: Colors.grey.shade800.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(30)
+            ),
+
+            child: Icon(icon,color: Colors.white70,size: 18,)),
         Padding(
           padding: const EdgeInsets.only(top: 8.0),
-          child: Text(text),
+          child: Text(text,style: TextStyle(
+            color: Colors.white70
+          ),),
         ),
       ],
     );
@@ -138,6 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _buildFolderItem(String title, String subtitle, {int? number}) {
     return ListTile(
       leading: Icon(Icons.folder,size: 85,),
+
       title: Text(title,style: TextStyle(
         color: Colors.white70
       ),),
