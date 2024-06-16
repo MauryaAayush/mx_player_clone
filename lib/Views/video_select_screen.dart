@@ -30,7 +30,6 @@ class VideoSelectionScreen extends StatelessWidget {
         title: const Text('Cartoons',style: TextStyle(
           color: Colors.white
         ),),
-
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
