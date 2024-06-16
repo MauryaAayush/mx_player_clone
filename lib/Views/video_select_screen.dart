@@ -10,9 +10,27 @@ class VideoSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF16202A),
       appBar: AppBar(
+
+        elevation: 10,
         centerTitle: true,
-        title: const Text('Video Selection'),
+        title: const Text('Cartoon',style: TextStyle(
+          color: Colors.white
+        ),),
+
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFF1D354F),
+                Color(0xFF16202A),
+              ],
+            ),
+          ),
+        ),
       ),
       body: ListView.builder(
         itemCount: videos.length,
@@ -27,14 +45,17 @@ class VideoSelectionScreen extends StatelessWidget {
                   child: CachedNetworkImage(
                     imageUrl: videos[index]['thumbnail']!,
                     placeholder: (context, url) => CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => Icon(Icons.video_call),
+                    errorWidget: (context, url, error) => Icon(Icons.video_call,color: Colors.white),
                     fit: BoxFit.cover,
                   ),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
                   child: ListTile(
-                    title: Text(videos[index]['title']!),
+                    trailing: Icon(Icons.more_vert),
+                    title: Text(videos[index]['title']!,style: TextStyle(
+                      color: Colors.white
+                    ),),
                     onTap: () {
                       Navigator.push(
                         context,
