@@ -137,16 +137,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildFolderItem(String title, String subtitle, {int? number}) {
     return ListTile(
-      leading: Icon(Icons.folder),
-      title: Text(title),
+      leading: Icon(Icons.folder,size: 85,),
+      title: Text(title,style: TextStyle(
+        color: Colors.white70
+      ),),
       subtitle: Text(subtitle),
-      trailing: number != null
-          ? CircleAvatar(
-              radius: 12,
-              backgroundColor: Colors.red,
-              child: Text(number.toString()),
-            )
-          : null,
+
     );
   }
 }
