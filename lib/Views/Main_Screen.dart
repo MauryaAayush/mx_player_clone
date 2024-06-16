@@ -131,7 +131,6 @@ class _MyHomePageState extends State<MyHomePage> {
       children: <Widget>[
         Container(
           margin: EdgeInsets.symmetric(horizontal: 10),
-            height: 50,
             padding: EdgeInsets.symmetric(vertical: 10,horizontal: 25),
             decoration: BoxDecoration(
                 color: Colors.grey.shade800.withOpacity(0.3),
