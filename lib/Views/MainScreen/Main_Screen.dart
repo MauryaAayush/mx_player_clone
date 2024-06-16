@@ -101,6 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
             _currentIndex = index;
           });
         },
+
+
         items: [
           BottomNavigationBarItem(
             backgroundColor:Color(0xFF1C2939),
@@ -123,6 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
       ),
+
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
         shape: const CircleBorder(),
