@@ -84,10 +84,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: _buildFolderItem('Cartoons', '20 video')),
                   InkWell(
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const InstoreSelectScreen(),));
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const InstoreSelectScreen(),
+                        ));
                       },
                       child: _buildFolderItem('Camera', '21 videos')),
-                  _buildFolderItem('In-Store Downloader', '21 videos'),
+                  InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const InstoreSelectScreen(),
+                        ));
+                      },
+                      child: _buildFolderItem('In-Store Downloader', '21 videos')),
                   _buildFolderItem('Instant Downloader', '1 video'),
                   _buildFolderItem('Internal memory', '2 videos'),
                   _buildFolderItem('Screen Record', '7 videos', number: 1),
