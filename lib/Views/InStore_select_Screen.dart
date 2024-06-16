@@ -8,6 +8,7 @@ class InstoreSelectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF16202A),
       appBar: AppBar(
         leading: IconButton(onPressed: () {
           Navigator.pop(context);
@@ -44,7 +45,22 @@ class InstoreSelectScreen extends StatelessWidget {
         itemCount: inStore.length,
         itemBuilder: (context, index) {
           return ListTile(
-            leading: Icon(Icons.video_library),
+            trailing: Icon(Icons.more_vert),
+            leading: Container(
+              width: 45,
+              height: 45,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage('assets/img.png')
+                ),
+              ),
+            ),
+            titleTextStyle: TextStyle(
+                color: Colors.white70,
+                fontSize: 20
+            ),
             title: Text(inStore[index]['title'] ?? ''),
             onTap: () {
               // Handle video selection here
