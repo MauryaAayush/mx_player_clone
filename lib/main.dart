@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Views/Main_Screen.dart';
 import 'Views/video_select_screen.dart';
 
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: VideoSelectionScreen(),
+      home: MyHomePage(title: 'page',),
     );
   }
 }
