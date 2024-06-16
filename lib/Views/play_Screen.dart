@@ -1,6 +1,7 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:flutter/services.dart';
 
 class VideoPlayerScreen extends StatefulWidget {
   final String videoUrl;
@@ -19,6 +20,12 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   void initState() {
     super.initState();
     initializePlayer(widget.videoUrl);
+
+    // Set the orientation to landscape mode
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
   }
 
   Future<void> initializePlayer(String url) async {
@@ -39,43 +46,39 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   void dispose() {
     videoPlayerController.dispose();
     chewieController.dispose();
+
+    // Restore the orientation to portrait mode
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Video Player'),
-        leading: const Icon(Icons.menu),
-      ),
-      body: Column(
+      body: Stack(
         children: [
           if (videoPlayerController.value.isInitialized)
-            AspectRatio(
-              aspectRatio: videoPlayerController.value.aspectRatio,
-              child: Chewie(controller: chewieController),
+            Center(
+              child: AspectRatio(
+                aspectRatio: videoPlayerController.value.aspectRatio,
+                child: Chewie(controller: chewieController),
+              ),
             )
           else
             const Center(child: CircularProgressIndicator()),
-          const SizedBox(height: 20),
-        ],
-      ),
-      floatingActionButton: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          IconButton(
-            onPressed: () {
-              videoPlayerController.play();
-            },
-            icon: const Icon(Icons.play_circle),
-          ),
-          IconButton(
-            onPressed: () {
-              videoPlayerController.pause();
-            },
-            icon: const Icon(Icons.pause_circle),
+          Positioned(
+            top: 40,
+            left: 10,
+            child: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: const Icon(Icons.arrow_back, color: Colors.white),
+            ),
           ),
         ],
       ),
