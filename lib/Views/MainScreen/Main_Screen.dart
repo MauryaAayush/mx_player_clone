@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../video_select_screen.dart';
 import 'Components/Folder -- Icon.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -75,7 +76,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               child: ListView(
                 children: <Widget>[
-                  _buildFolderItem('Cartoons', '20 video'),
+                  InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const VideoSelectionScreen(),));
+                      },
+                      child: _buildFolderItem('Cartoons', '20 video')),
                   _buildFolderItem('Camera', '4 videos'),
                   _buildFolderItem('In-Store Downloader', '33 videos'),
                   _buildFolderItem('Instant Downloader', '1 video'),
