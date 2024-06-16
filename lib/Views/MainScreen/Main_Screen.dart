@@ -96,12 +96,48 @@ class _MyHomePageState extends State<MyHomePage> {
                         ));
                       },
                       child: _buildFolderItem('In-Store Downloader', '21 videos')),
-                  _buildFolderItem('Instant Downloader', '1 video'),
-                  _buildFolderItem('Internal memory', '2 videos'),
-                  _buildFolderItem('Screen Record', '7 videos', number: 1),
-                  _buildFolderItem('Snapchat', '4 videos'),
-                  _buildFolderItem('Telegram', '5 videos'),
-                  _buildFolderItem('Telegram Video', '5 videos'),
+                  InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const InstoreSelectScreen(),
+                        ));
+                      },
+                      child: _buildFolderItem('Instant Downloader', '1 video')),
+                  InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const InstoreSelectScreen(),
+                        ));
+                      },
+                      child: _buildFolderItem('Internal memory', '2 videos')),
+                  InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const InstoreSelectScreen(),
+                        ));
+                      },
+                      child: _buildFolderItem('Screen Record', '7 videos', number: 1)),
+                  InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const InstoreSelectScreen(),
+                        ));
+                      },
+                      child: _buildFolderItem('Snapchat', '4 videos')),
+                  InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const InstoreSelectScreen(),
+                        ));
+                      },
+                      child: _buildFolderItem('Telegram', '5 videos')),
+                  InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const InstoreSelectScreen(),
+                        ));
+                      },
+                      child: _buildFolderItem('Telegram Video', '5 videos')),
                 ],
               ),
             ),
