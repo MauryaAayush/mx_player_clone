@@ -59,6 +59,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF16202A),
       body: Stack(
         children: [
           if (videoPlayerController.value.isInitialized)
