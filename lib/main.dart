@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'Views/MainScreen/Main_Screen.dart';
 import 'Views/Splash_Screen.dart';
 
 
@@ -19,7 +18,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // home: MyHomePage(title: 'page',),
       home: const SplashScreen(),
     );
   }
