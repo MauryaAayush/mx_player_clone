@@ -22,15 +22,15 @@ This repository contains a clone of the popular MX Player app, built using Flutt
 ###
 
 <div align="center">
+<img src="https://github.com/MauryaAayush/mx_player_clone/assets/143180849/f749f967-6612-449e-83f5-7ca06bd142d5" height=500px hspace=20>
+<img src="https://github.com/MauryaAayush/mx_player_clone/assets/143180849/254adde3-6330-423c-8900-89b44edf74e2" height=500px hspace=20>
 
-<img src="https://github.com/MauryaAayush/habit_tracker/assets/143180849/d21a1697-cd19-4fc3-acde-14e1040e4490" height=500px hspace=20>
 <img src="https://github.com/MauryaAayush/mx_player_clone/assets/143180849/9bbb807d-8440-462c-91f1-035b35ba3699" height=500px hspace=20>
 <img src="https://github.com/MauryaAayush/mx_player_clone/assets/143180849/e23a7243-1033-4fbb-84b3-7758a4cf72fd" height=500px hspace=20>
 <img src="https://github.com/MauryaAayush/mx_player_clone/assets/143180849/ffd0403b-42cc-48bc-bf8a-89a8436c5b44" height=500px hspace=20>
 <img src="https://github.com/MauryaAayush/mx_player_clone/assets/143180849/86c9c039-845a-48ad-a2a0-4c6c5e84c11b" height=500px hspace=20>
 <img src="https://github.com/MauryaAayush/mx_player_clone/assets/143180849/393d3769-5eeb-4f77-a689-25e11bd5518b" height=500px hspace=20>
-<img src="https://github.com/MauryaAayush/mx_player_clone/assets/143180849/254adde3-6330-423c-8900-89b44edf74e2" height=500px hspace=20>
-<img src="https://github.com/MauryaAayush/mx_player_clone/assets/143180849/f749f967-6612-449e-83f5-7ca06bd142d5" height=500px hspace=20>
+
 <img src="https://github.com/MauryaAayush/mx_player_clone/assets/143180849/312957fa-b92b-4049-bc96-124d2b314b54" height=500px hspace=20>
 
 
