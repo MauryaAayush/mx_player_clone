@@ -19,7 +19,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Color(0xFF16202A),
       appBar: AppBar(
-        title: Text(
+        automaticallyImplyLeading: false,
+        title: const Text(
           "Folders",
           style: TextStyle(color: Colors.white),
         ),
