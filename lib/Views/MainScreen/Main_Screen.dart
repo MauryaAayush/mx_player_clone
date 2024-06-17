@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
           "Folders",
           style: TextStyle(color: Colors.white),
         ),
-        actionsIconTheme: IconThemeData(color: Colors.white),
+        actionsIconTheme: const IconThemeData(color: Colors.white),
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
